@@ -1,0 +1,97 @@
+SOME GENERAL POINTERS:
+
+This is for the PARALLEL LCD, the LCD AT THE BACK.
+
+You MUST wait for the function to fully execute before it goes to the next line of code
+
+PLEASE PLEASE PLEASE RUN the main.c if you want to understand how to fully
+utilize the P_LCD.c and P_LCD.h files.
+
+To create a char array ( c [] ) and call the function:
+eg.
+
+char message [] = "This is a message";
+P_LCD_scroll_vertical(message);
+
+If you think this library is not versatile enough 
+1. Go and make yourself 
+2. I don't want to hear it
+
+FUNCTION DESCRIPTION
+
+THESE FUNCTIONS SHOULD NOT BE USED AND WERE CREATED TO BE USED INTERNALLY 
+WITHIN THE P_LCD.c MODULAR STRUCTURE:
+(if you use these functions it means the functions below these ones 
+doesn't fit your needs for some reason)
+
+void Pause_ms(int x); 
+Delays by (x*1) millisecond (ms)
+
+void Pause_us(int x);
+Delays by (x*40) microseconds (us)
+
+void P_LCD_send_byte(char c, int msg_or_cmd, int fast_or_slow)
+Sends byte to Parallel LCD
+msg_or_cmd: 0 = send command byte
+msg_or_cmd: 1 = send message byte
+fast_or_slow: 0 = is set slow (120ms) 
+fast_or_slow: 1 = is set fast (3us)
+if set to command mode, it will automatically toggle fast mode
+
+IGNORE ALL FUNCTIONS ABOVE
+
+THESE FUNCTIONS ARE THE ONES YOU SHOULD BE USING:
+
+void P_LCD_init(void); 
+Initialize Parallel LCD
+
+FUNCTIONS TO SET CURSOR:
+
+void P_LCD_set_cursor(int on_or_off)
+on_or_off: 1 = turn on cursor
+on_or_off: 0 = turn off cursor
+
+void P_LCD_cursor(int top_or_bottom)
+Sets cursor to either top or bottom line
+top_or_bottom: 1 = top line
+top_or_bottom: 2 = bottom line
+
+FUNCTION TO SEND MESSAGE TO EITHER TOP, BOTTOM OR BOTH LINES:
+
+void P_LCD_send(char c[], int top_or_bottom);
+Sends a message smaller than 15 chars to the Parallel LCD
+top_or_bottom: 1 = top line
+top_or_bottom: 2 = bottom line
+
+void P_LCD_send_all(char c[]); 
+Sends the entire message to the first line, if message char amount > 16, 
+sends to second line, if even the second line cannot display the full contents, 
+nothing will happen
+
+FUNCTIONS TO CLEAR EITHER TOP, BOTTOM OR BOTH LINES:
+
+void P_LCD_CLR(int row);
+Clears the screen
+row: 0 = clear both rows
+row: 1 = clear only the top row
+row: 2 = clear only the bottom row
+
+FUNCTION TO SCROLL A MESSAGE VERTICALLY ON BOTH LINES:
+
+void P_LCD_scroll_vertical(char c[]);
+Scrolls char array message downwards
+
+FUNCTION TO SCROLL A MESSAGE HORIZONTALLY ON ONE LINE:
+
+void P_LCD_scroll_horizontal(char c[], int top_or_bottom);
+Scrolls a message horizontally sideways
+char c[] = Enter char array message here
+top_or_bottom: 1 = scroll message on top line
+top_or_bottom: 2 = scroll message on bottom line
+
+FUCTION TO FLASH A MESSAGE THAT IS SMALLER THAN 16 CHARS:
+
+void P_LCD_flash(char c[], int time, int top_or_bottom);
+Flashes a message that is <= 16 chars
+top_or_bottom: 1 = flashes a message on the top line 
+top_or_bottom: 2 = flashes a message on the bottom line

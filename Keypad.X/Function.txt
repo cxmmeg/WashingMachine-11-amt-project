@@ -1,0 +1,10 @@
+keypad_init() - To initialize the keypad
+
+
+Read_Key() - To read the key user are going to use 
+Example :  Read_Key() == 3   // read the key 3
+           Read_Key() == 10  // read the key  A
+           Read_Key() == 14  //read the key *
+           Read_Key() == KEY_NONE  // when user are not pressing anything and no key is read
+
+refer to header file to see what key can be read
