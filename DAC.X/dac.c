@@ -1,13 +1,7 @@
+#include "amt.h"
 #include <p18f97j60.h>
 void SPI1DACinit(void);
-void sendDAC(char first,char second);
-void DACwave(void);
-void DAClvl0(void);
-void DAClvl1(void);
-void DAClvl2(void);
-void DAClvl3(void);
-void DAClvl4(void);
-void DACblink(int times);
+void testDAC(char first,char second);
 
 void SPI1DACinit(void){
 
@@ -40,43 +34,30 @@ void sendDAC(char first,char second){
     delay_ms(1000);
 }
 
-void DACwave(void) {
-    sendDAC(0x90,0x00);
-    sendDAC(0x93,0x30);
-    sendDAC(0x96,0x60);
-    sendDAC(0x9F,0xF0);
-    sendDAC(0x9F,0xFF);
-    sendDAC(0x9F,0xF0);
-    sendDAC(0x96,0x60);
-    sendDAC(0x93,0x30);
-    sendDAC(0x90,0x00);
+void DACcontinuous(void) {
+    testDAC(0x90,0x00);
+    testDAC(0x93,0x30);
+    testDAC(0x96,0x60);
+    testDAC(0x9F,0xF0);
+    testDAC(0x9F,0xFF);
 }
 
 void DAClvl0(void) {
-    sendDAC(0x90,0x00);
+    testDAC(0x90,0x00);
 }
 
 void DAClvl1(void) {
-    sendDAC(0x93,0x30);
+    testDAC(0x93,0x30);
 }
 
 void DAClvl2(void) {
-    sendDAC(0x96,0x60);
+    testDAC(0x96,0x60);
 }
 
 void DAClvl3(void) {
-    sendDAC(0x9F,0xF0);
+    testDAC(0x9F,0xF0);
 }
 
 void DAClvl4(void) {
-    sendDAC(0x9F,0xFF);
+    testDAC(0x9F,0xFF);
 }
-
-void DACblink(int times) {
-    for(int i = 0; i <= times; i++) {
-        sendDAC(0x90,0x00); 
-        sendDAC(0x9F,0xFF);
-        sendDAC(0x90,0x00); 
-    }
-}
-

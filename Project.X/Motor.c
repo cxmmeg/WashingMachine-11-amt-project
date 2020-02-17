@@ -1,11 +1,11 @@
 
 #include <xc.h>
 #include <stdio.h>
-#include "Motor.h"
-#include "amt.h"
+#include "motor.h"
 #pragma config XINST = OFF
 #pragma config FOSC = HS
 #pragma config WDT = OFF
+#define _XTAL_FREQ 25000000
 #define steps 200
 
 // Going to left is Clockwise

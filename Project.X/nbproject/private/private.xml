@@ -3,8 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Github/amt-project/Project.X/keypad.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/rs232.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/temp.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/plcd.h</file>
             <file>file:/D:/Github/amt-project/Project.X/Dac.c</file>
+            <file>file:/D:/Github/amt-project/Project.X/Temp_Monitoring.c</file>
+            <file>file:/D:/Github/amt-project/Project.X/rfid.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/spi_eeprom.c</file>
+            <file>file:/D:/Github/amt-project/Project.X/motor.h</file>
             <file>file:/D:/Github/amt-project/Project.X/dac.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/LCD8.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/main.c</file>
+            <file>file:/D:/Github/amt-project/Project.X/delay.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/rtc.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/Motor.c</file>
+            <file>file:/D:/Github/amt-project/Project.X/buzzer.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/eeprom.h</file>
+            <file>file:/D:/Github/amt-project/Project.X/RFID.c</file>
         </group>
     </open-files>
 </project-private>
